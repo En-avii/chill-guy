@@ -16,7 +16,7 @@
 
 ## Demo
 
-You can see a live demo of the portfolio website at [https://shivam-sharma-myportfolio.vercel.app/](https://shivam-sharma-myportfolio.vercel.app/).
+You can see a live demo of the portfolio website at [https://abhishek-04.netlify.app/](https://abhishek-04.netlify.app/).
 
 ## Features
 
@@ -47,39 +47,4 @@ You can see a live demo of the portfolio website at [https://shivam-sharma-mypor
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/Shivam-Sharma-1/3D-Portfolio
-```
-
-2. Change to the project directory:
-
-```bash
-cd 3d-portfolio
-```
-
-3. Install the project dependencies:
-
-```bash
-npm install
-```
-
-4. To run the development server:
-
-```bash
-npm run dev
-```
-
-Open your web browser and visit http://localhost:3000 to see the website in action during development.
-
-## Project Structure
-
-The project structure is organized as follows:
-
--   `components`: React components used to build different sections of the portfolio.
--   `styles`: Styles and theme configurations, including the dark and light themes.
--   `public`: Static assets, such as images and fonts.
--   `pages`: Individual pages of the website.
--   `utils`: Utility functions or helper scripts.
-
-## Author
-
--   [@Shivam-Sharma-1](https://github.com/Shivam-Sharma-1)
+git clone https://github.com/Abhishek-04/3D-Portfolio
