@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
 		"Hello! I'm Abhishek Yadav, a passionate web developer and problem solver. Welcome to my portfolio";
 	const avatar =
 		"";
-	const url = "https://aviii.vercel.app/";
+	const url = "https://abhishek-04.netlify.app/";
 
 	return (
 		<>
