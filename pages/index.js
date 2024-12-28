@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import {
   About,
   Contact,
+  Works,
   Experience,
   Hero,
   Navbar,
   StarsCanvas,
   Tech,
-  Works,
+  Feedbacks
 } from "@/components";
 import HeroBackground from "@/components/HeroBackground";
 import EarthContainer from "@/components/EarthContainer";
@@ -50,10 +51,10 @@ function App({ loading }) {
         {!isMobile && <PlayerContainer isMobile={isMobile} />}
       </section>
       <Services />
-      <Experience />
-      <Tech />
       <Works />
-      {/* <Feedbacks /> */}
+      <Tech />
+      <Experience />
+      <Feedbacks />
       <section className="relative z-0 flex md:flex-row justify-between flex-col-reverse w-full h-full overflow-x-hidden sm:p-8 p-2 pb-8">
         <Contact />
         <EarthContainer isMobile={isMobile} />
