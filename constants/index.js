@@ -209,61 +209,6 @@ const technologies = {
   ],
 };
 
-const experiences = [
-  {
-    title: "Full Stack Developer",
-    company_name: "Tech Lead at Engify",
-    icon: "/assets/company/engify.png",
-    iconBg: "#E6DEDD",
-    date: "Dec 2022 - Nov 2023 ",
-    points: [
-      "Served as the Tech Lead at Engify from 2022 to 2023, leading technical initiatives, fostering team collaboration, and contributing to strategic planning.",
-      "Led onboarding programs to ensure seamless integration of new members and alignment with Engify's mission, while providing technical mentorship.",
-      "Developed the official Engify website, significantly enhancing the organization's online presence.",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company_name: "Web Developer",
-    icon: "/assets/company/mod.png",
-    iconBg: "#E6DEDD",
-    date: "Jan 2025 - Feb 2025 ",
-    points: [
-      "Developed dynamic and responsive web interfaces using HTML, CSS, JavaScript, and Bootstrap, ensuring cross-browser compatibility and optimized front-end performance.",
-      "Integrated REST APIs to enhance functionality and collaborated with the team to refine user experiences and streamline deployment processes.",
-      "Gained hands-on experience in debugging, testing, and improving web application performance for seamless user interactions.",
-    ],
-  },
- 
-];
-
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
-
 const projects = [
   {
     name: "Decode",
@@ -360,6 +305,37 @@ const projects = [
   
 ];
 
+
+const experiences = [
+  {
+    title: "Full Stack Developer",
+    company_name: "Tech Lead at Engify",
+    icon: "/assets/company/engify.png",
+    iconBg: "#E6DEDD",
+    date: "Dec 2022 - Nov 2023 ",
+    points: [
+      "Served as the Tech Lead at Engify from 2022 to 2023, leading technical initiatives, fostering team collaboration, and contributing to strategic planning.",
+      "Led onboarding programs to ensure seamless integration of new members and alignment with Engify's mission, while providing technical mentorship.",
+      "Developed the official Engify website, significantly enhancing the organization's online presence.",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company_name: "Web Developer",
+    icon: "/assets/company/mod.png",
+    iconBg: "#E6DEDD",
+    date: "Jan 2025 - Feb 2025 ",
+    points: [
+      "Developed dynamic and responsive web interfaces using HTML, CSS, JavaScript, and Bootstrap, ensuring cross-browser compatibility and optimized front-end performance.",
+      "Integrated REST APIs to enhance functionality and collaborated with the team to refine user experiences and streamline deployment processes.",
+      "Gained hands-on experience in debugging, testing, and improving web application performance for seamless user interactions.",
+    ],
+  },
+ 
+];
+
+
+
 const socials = [
   {
     id: "github",
@@ -399,9 +375,9 @@ export {
   navLinks,
   services,
   technologies,
-  experiences,
-  testimonials,
   projects,
+  experiences,
+
   socials,
   heroTexts,
 };
