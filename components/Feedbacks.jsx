@@ -43,14 +43,13 @@ function AchievementCard({
   teamMembers,
 }) {
   const gradients = [
-    "from-red-500 to-purple-600", 
+    "from-red-500 to-purple-600",
     "from-blue-600 to-indigo-500",
-    "from-orange-500 to-red-600", 
-    "from-teal-500 to-emerald-400", 
-    "from-yellow-500 to-amber-600", 
+    "from-orange-500 to-red-600",
+    "from-teal-500 to-emerald-400",
+    "from-yellow-500 to-amber-600",
     "from-cyan-500 to-sky-400",
   ];
-  
 
   return (
     <motion.div
@@ -73,8 +72,9 @@ function AchievementCard({
             className="object-cover rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-between m-3 card-img_hover gap-2">
-            {[{ link, title: "Visit Website", icon: "link" },
-              { link: photoLink, title: "View Photo", icon: "photo" },
+            {[
+              { link, title: "Visit Website", icon: "link" },
+              { link: photoLink, title: "View Certificate", icon: "certificate" },
               { link: teamIntroLink, title: "Meet the Team", icon: "team" },
             ].map((item, i) => (
               <div
@@ -90,7 +90,7 @@ function AchievementCard({
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="white"
-                    className="w-6 h-6"
+                    className="w-5 h-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -98,20 +98,16 @@ function AchievementCard({
                       d="M13 7h8m0 0v8m0-8L7 21"
                     />
                   </svg>
-                ) : item.icon === "photo" ? (
+                ) : item.icon === "certificate" ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    fill="currentColor"
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="white"
-                    className="w-6 h-6"
+                    className="w-5 h-5 text-yellow-400"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.232 4.232a2.828 2.828 0 1 1 4 4L9.5 22H5v-4.5L15.232 4.232z"
-                    />
+                    <path d="M12 0L9.66 7.75H1.5L8.58 12.5L6.34 20.25L12 15.5L17.66 20.25L15.42 12.5L22.5 7.75H14.34L12 0Z" />
                   </svg>
                 ) : (
                   <svg
@@ -120,7 +116,7 @@ function AchievementCard({
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="white"
-                    className="w-6 h-6"
+                    className="w-5 h-5"
                   >
                     <path
                       strokeLinecap="round"
