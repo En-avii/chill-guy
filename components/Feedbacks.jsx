@@ -3,19 +3,6 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import Image from "next/image";
 
-// Constants
-const achievements = [
-  {
-    title: "Smart India Hackathon Finalist 2024",
-    description:
-      "Finalist for the Smart India Hackathon 2024. Developed an innovative solution for monitoring construction progress in building projects.",
-    image: "/assets/images/sih-finalist.jpg", // Replace with the actual path to your image
-    link: "https://www.sih.gov.in", // Link to the official SIH website
-    photoLink: "https://example.com/sih-photo", // Replace with the actual link to the SIH photo
-  },
-  // Add other achievements as needed
-];
-
 // Motion Variants
 const fadeIn = (direction = "up", type = "tween", delay = 0, duration = 1) => ({
   hidden: {
@@ -45,7 +32,26 @@ const textVariant = () => ({
 });
 
 // AchievementCard Component
-function AchievementCard({ index, title, description, image, link, photoLink }) {
+function AchievementCard({
+  index,
+  title,
+  description,
+  image,
+  link,
+  photoLink,
+  teamIntroLink,
+  teamMembers,
+}) {
+  const gradients = [
+    "from-red-500 to-purple-600", 
+    "from-blue-600 to-indigo-500",
+    "from-orange-500 to-red-600", 
+    "from-teal-500 to-emerald-400", 
+    "from-yellow-500 to-amber-600", 
+    "from-cyan-500 to-sky-400",
+  ];
+  
+
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
@@ -54,64 +60,79 @@ function AchievementCard({ index, title, description, image, link, photoLink }) 
       viewport={{ once: true, amount: 0.25 }}
     >
       <Tilt
-        tiltMaxAngleX="10"
-        tiltMaxAngleY="10"
-        className="dark:bg-bgSecondaryDark bg-bgSecondaryLight p-5 rounded-2xl sm:w-[370px] w-full h-fit min-h-[590px] shadow-sm shadow-primary"
+        tiltMaxAngleX={10}
+        tiltMaxAngleY={10}
+        className="dark:bg-bgSecondaryDark bg-bgSecondaryLight p-5 rounded-2xl sm:w-[370px] w-full h-fit min-h-[650px] shadow-sm shadow-primary"
       >
         <div className="relative w-full h-[230px]">
-          <div className="w-full h-full object-cover rounded-2xl relative">
-            <Image
-              src={image}
-              alt={`${title}-image`}
-              fill={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
-              className="object-cover rounded-2xl"
-            />
-          </div>
-          <div className="absolute inset-0 flex justify-between m-3 card-img_hover">
-            <div
-              onClick={() => window.open(link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              title="Visit Website"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="white"
-                className="w-6 h-6"
+          <Image
+            src={image}
+            alt={`${title}-image`}
+            layout="fill"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
+            className="object-cover rounded-2xl"
+          />
+          <div className="absolute inset-0 flex justify-between m-3 card-img_hover gap-2">
+            {[{ link, title: "Visit Website", icon: "link" },
+              { link: photoLink, title: "View Photo", icon: "photo" },
+              { link: teamIntroLink, title: "Meet the Team", icon: "team" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                onClick={() => window.open(item.link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform"
+                title={item.title}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 10l9-7 9 7M4 12h16v10H4z"
-                />
-              </svg>
-            </div>
-            <div
-              onClick={() => window.open(photoLink, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              title="View Photo"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 20l-8-8m0 0l8-8m-8 8h16"
-                />
-              </svg>
-            </div>
+                {item.icon === "link" ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="white"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 7h8m0 0v8m0-8L7 21"
+                    />
+                  </svg>
+                ) : item.icon === "photo" ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="white"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.232 4.232a2.828 2.828 0 1 1 4 4L9.5 22H5v-4.5L15.232 4.232z"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="white"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8 7V5a3 3 0 1 1 6 0v2m-9 4h12m-7 4h2"
+                    />
+                  </svg>
+                )}
+              </div>
+            ))}
           </div>
         </div>
-
         <div className="mt-5">
           <h3 className="dark:text-ctnPrimaryDark text-ctnPrimaryLight font-bold text-[24px]">
             {title}
@@ -119,6 +140,21 @@ function AchievementCard({ index, title, description, image, link, photoLink }) 
           <p className="mt-2 dark:text-ctnSecondaryDark text-ctnSecondaryLight text-[14px]">
             {description}
           </p>
+        </div>
+        <div className="mt-4">
+          <h4 className="dark:text-ctnPrimaryDark text-ctnPrimaryLight font-semibold">
+            Team Members:
+          </h4>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {teamMembers.map((member, idx) => (
+              <span
+                key={idx}
+                className={`text-[14px] font-medium px-2 py-1 rounded-md bg-gradient-to-r ${gradients[idx % gradients.length]} text-transparent bg-clip-text`}
+              >
+                {member}
+              </span>
+            ))}
+          </div>
         </div>
       </Tilt>
     </motion.div>
@@ -154,13 +190,9 @@ function Achievements() {
       </div>
 
       <div className="md:mt-20 mt-10 flex justify-center flex-wrap gap-7">
-        {Array.isArray(achievements) && achievements.length > 0 ? (
+        {achievements.length > 0 ? (
           achievements.map((achievement, index) => (
-            <AchievementCard
-              key={`achievement-${index}`}
-              index={index}
-              {...achievement}
-            />
+            <AchievementCard key={index} index={index} {...achievement} />
           ))
         ) : (
           <p className="text-center text-ctnSecondaryLight">
@@ -173,3 +205,23 @@ function Achievements() {
 }
 
 export default Achievements;
+
+// Updated Data Exports
+const achievements = [
+  {
+    title: "Smart India Hackathon 2024 Finalist",
+    description:
+      "Finalist at IIT Gandhinagar. Built a platform using Python, OpenCV, TensorFlow, and Flask to monitor construction progress through image-based analysis.",
+    image: "/assets/projects/Team.jpg",
+    link: "https://www.sih.gov.in/",
+    photoLink: "https://res.cloudinary.com/dl2nwcls0/image/upload/v1735483727/certificate_wb1zlo.jpg",
+    teamIntroLink: "https://teammembers.intro",
+    teamMembers: [
+      "Alaukik Patel",
+      "Ganesh Kumar",
+      "Apoorva Yadav",
+      "Apoorva Singh",
+      "Shantanu Baban Kumbhirkar",
+    ],
+  },
+];
