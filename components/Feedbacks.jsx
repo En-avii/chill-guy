@@ -211,7 +211,7 @@ const achievements = [
     image: "/assets/projects/Team.jpg",
     link: "https://www.sih.gov.in/",
     photoLink: "https://res.cloudinary.com/dl2nwcls0/image/upload/v1735483727/certificate_wb1zlo.jpg",
-    teamIntroLink: "https://teammembers.intro",
+    teamIntroLink: "https://win9dev.netlify.app/",
     teamMembers: [
       "Alaukik Patel",
       "Ganesh Kumar",
