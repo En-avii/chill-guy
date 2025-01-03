@@ -325,8 +325,8 @@ const projects = [
       },
     ],
     image: "/assets/projects/movieapp.jpeg",
-    source_code_link: "https://github.com/En-avii/movie-app",
-    deployed_link: "https://movieapp.netlify.app/",
+    source_code_link: "https://github.com/En-avii/client",
+    deployed_link: "https://https://aviimovienest.vercel.app/",
   },
 ];
 
