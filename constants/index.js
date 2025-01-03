@@ -302,9 +302,33 @@ const projects = [
     deployed_link:
       "https://github.com/",
   },
-  
+  {
+    name: "MovieNest ",
+    description:
+      "A movie discovery platform that allows users to search, explore, and review movies. Built using React, TailwindCSS, and TMDB API, the app provides a seamless user experience with features like advanced search, filtering, and detailed movie descriptions.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TailwindCSS",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "TMDB API",
+        color: "green-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: "/assets/projects/movieapp.jpeg",
+    source_code_link: "https://github.com/En-avii/movie-app",
+    deployed_link: "https://movieapp.netlify.app/",
+  },
 ];
-
 
 const experiences = [
   {
@@ -331,10 +355,7 @@ const experiences = [
       "Gained hands-on experience in debugging, testing, and improving web application performance for seamless user interactions.",
     ],
   },
- 
 ];
-
-
 
 const socials = [
   {
@@ -360,7 +381,6 @@ const socials = [
 ];
 
 const heroTexts = [
-  
   "Freelancer",
   500,
   "Full-Stack Developer",
@@ -377,7 +397,6 @@ export {
   technologies,
   projects,
   experiences,
-
   socials,
   heroTexts,
 };
