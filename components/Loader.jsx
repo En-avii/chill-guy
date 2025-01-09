@@ -8,7 +8,7 @@ function CanvasLoader() {
 		<Html
 			as="div"
 			center
-			className=" flex justify-center items-center w-full h-full flex-col z-30"
+			className="flex justify-center items-center w-full h-full flex-col z-30"
 		>
 			<span className="canvas-loader z-30 text-white"></span>
 			<p className="text-[14px] text-white font-bold mt-10 z-30">
@@ -22,16 +22,26 @@ export function PreLoader() {
 	const [progress, setProgress] = useState(0);
 
 	useEffect(() => {
-		const updateProgress = () => {
-			for (let i = 0; i < 100; i++) {
-				setTimeout(() => {
-					setProgress(i);
-				}, 30 * i);
-			}
-		};
+		const audio = new Audio("/krishna.mp3"); // Define audio here
+		audio.loop = true; // Enable looping of the audio
 
-		updateProgress();
-	}, []);
+		// Start playing the audio
+		audio.play().catch((err) => {
+			console.error("Audio playback failed:", err);
+		});
+
+		// Simulate loading progress
+		const interval = setInterval(() => {
+			setProgress((prev) => (prev < 100 ? prev + 1 : 100));
+		}, 30);
+
+		// Cleanup function
+		return () => {
+			audio.pause(); // Stop the audio
+			audio.currentTime = 0; // Reset the audio to start
+			clearInterval(interval); // Cleanup progress interval
+		};
+	}, []); // Empty dependency array to run the effect once when the component mounts
 
 	return (
 		<div className="w-[100svw] h-[100svh] overflow-hidden bg-bgPrimaryLight dark:bg-bgPrimaryDark z-40 fixed top-0 left-0 flex flex-col justify-center items-center gap-8">
