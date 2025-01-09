@@ -63,7 +63,7 @@ function About() {
           ))}
         </div>
         <Link
-          href="public/AviiResume.pdf"
+          href="document/AviiResume.pdf"
           target="_blank"
           rel="noreferrer"
           className="w-fit"
