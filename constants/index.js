@@ -366,7 +366,7 @@ const socials = [
   {
     id: "linkedin",
     icon: <LinkedInIcon />,
-    link: "https://www.linkedin.com/in/enaviii04",
+    link: "https://www.linkedin.com/in/abhixh3k",
   },
   {
     id: "x",
@@ -376,7 +376,7 @@ const socials = [
   {
     id: "instagram",
     icon: <InstagramIcon />,
-    link: "https://www.instagram.com/_aviii.15",
+    link: "https://www.instagram.com/_abhixhek.y",
   },
 ];
 
